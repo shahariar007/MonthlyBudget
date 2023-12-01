@@ -55,20 +55,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.asset(
-                        'assets/logo.png',
-                        width: 300,
-                        height: 200,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ],
-                ),
+
                 Row(
                  // mainAxisSize: MainAxisSize.max,
                   children: [
@@ -84,13 +71,28 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Padding(
-                            padding:
-                            EdgeInsetsDirectional.fromSTEB(10, 10, 10, 10),
+                            padding: EdgeInsets.fromLTRB(10, 30, 10, 20),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    ClipRRect(
+                                      borderRadius: BorderRadius.circular(8),
+                                      child: Image.asset(
+                                        'assets/logo.png',
+                                        width: 300,
+                                        height: 200,
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 10, 8, 0),
                                   child: TextFormField(
                                     controller: _model.textController1,
@@ -231,7 +233,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                                 ElevatedButton(onPressed: (){
                                   print('Button pressed ...');
-                                }, child: Text("Login",style: TextStyle(
+                                },
+                                    style: ElevatedButton.styleFrom(
+                                      padding: EdgeInsetsDirectional.fromSTEB(24, 0, 24, 0), backgroundColor: primary,
+                                      elevation: 3,
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                      ),
+                                    ),
+                                    child: Text("Login",style: TextStyle(
+                                  color: Colors.white
 
                                 ),)),
                                /* Button(
